@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --signal-bg: #edf3f0;
+  --signal-panel: #f5f7f5;
+  --signal-card: #ffffff;
+  --signal-border: #dfe9e5;
+  --signal-text: #1f2b2a;
+  --signal-muted: #5e6a67;
+  --signal-green: #1e8a7c;
+  --signal-green-dark: #0f675b;
+  --signal-green-soft: #ddf7f1;
+  --signal-bubble-outgoing: #dff8ef;
+  --signal-bubble-incoming: #edf1f5;
+  --signal-shadow: 0 18px 40px rgba(12, 31, 27, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  background: var(--signal-bg);
+  color: var(--signal-text);
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(30, 138, 124, 0.08), transparent 20%),
+    var(--signal-bg);
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(94, 106, 103, 0.3);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(94, 106, 103, 0.5);
+}
+
+.signal-auth-shell {
+  width: min(100%, 1040px);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 222, 217, 0.9);
+  border-radius: 30px;
+  box-shadow: var(--signal-shadow);
+  overflow: hidden;
+}
+
+.signal-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 36px 16px;
+}
+
+.signal-brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--signal-green), var(--signal-green-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(30, 138, 124, 0.26);
+}
+
+.signal-brand-name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.signal-secondary-badge {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--signal-muted);
+  background: rgba(30, 138, 124, 0.06);
+  border: 1px solid rgba(30, 138, 124, 0.08);
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+.signal-auth-card {
+  padding: 26px 28px 22px;
+}
+
+.signal-auth-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.signal-welcome {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.signal-tabs {
+  border-bottom: 1px solid var(--signal-border);
+  margin-bottom: 18px;
+}
+
+.signal-tab {
+  border-radius: 999px;
+  color: var(--signal-muted);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.signal-tab[aria-selected="true"] {
+  background: var(--signal-green-soft);
+  color: var(--signal-green-dark);
+  box-shadow: inset 0 0 0 1px rgba(30, 138, 124, 0.2);
+}
+
+.signal-chat-shell {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background: var(--signal-bg);
+}
+
+.signal-sidebar {
+  border-right: 1px solid var(--signal-border);
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.signal-panel {
+  flex: 1;
+  background: rgba(245, 247, 245, 0.8);
+}
+
+.signal-message-thread {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 22px;
+  border: 1px solid rgba(223, 233, 229, 0.9);
+  overflow: hidden;
+}
+
+.signal-bubble {
+  max-width: 72%;
+  border-radius: 18px;
+  padding: 10px 14px;
+  line-height: 1.5;
+  box-shadow: 0 2px 12px rgba(17, 24, 39, 0.04);
+}
+
+.signal-bubble.outgoing {
+  background: var(--signal-bubble-outgoing);
+  color: var(--signal-text);
+  border-bottom-right-radius: 6px;
+}
+
+.signal-bubble.incoming {
+  background: var(--signal-bubble-incoming);
+  color: var(--signal-text);
+  border-bottom-left-radius: 6px;
+}
+
+.signal-input-wrap {
+  border-top: 1px solid var(--signal-border);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.signal-action-pill {
+  background: var(--signal-green-soft);
+  color: var(--signal-green-dark);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 768px) {
+  .signal-auth-shell {
+    width: calc(100% - 16px);
+    border-radius: 24px;
+  }
+
+  .signal-brand-row {
+    padding: 18px 20px 12px;
+  }
+
+  .signal-auth-card {
+    padding: 18px 16px 20px;
+  }
+}
